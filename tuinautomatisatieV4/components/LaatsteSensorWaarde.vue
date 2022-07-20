@@ -1,27 +1,52 @@
 <template>
   <div class="accordion" role="tablist">
     <b-card no-body class="mb-1">
-      <b-card-header header-tag="header" class="p-1" role="tab">
-        <b-button block v-b-toggle.accordion-1>
-          Sensor Waarden
-        </b-button>
-      </b-card-header>
       <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel">
         <b-card-body>
-          <b-list-group>
-            <b-list-group-item>
-              Cras justo odio
-              <b-badge variant="primary" pill>14</b-badge>
-            </b-list-group-item>
-            <b-list-group-item>
-              Dapibus ac facilisis in
-            </b-list-group-item>
-            <b-list-group-item>
-              Morbi leo risus
+          <b-list-group flush>
+            <b-list-group-item v-for="sensor in sensoren">
+              <b-row>
+                <b-col>{{ sensor.naam }}</b-col>
+                <b-col>{{ sensor.prefix }}{{ sensor.waarde }}{{ sensor.suffix }}</b-col>
+              </b-row>
             </b-list-group-item>
           </b-list-group>
         </b-card-body>
       </b-collapse>
+      <b-card-footer class="p-1" role="tab">
+        <b-button block v-b-toggle.accordion-1>
+          Sensor Waarden
+        </b-button>
+      </b-card-footer>
     </b-card>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      sensoren: [
+        {
+          naam: "Temperatuur",
+          prefix: "",
+          suffix: "°C",
+          waarde: 37
+        },
+        {
+          naam: "Poort",
+          prefix: "",
+          suffix: "",
+          waarde: "Open"
+        },
+        {
+          naam: "Licht",
+          prefix: "",
+          suffix: "",
+          waarde: "12000"
+        }
+      ]
+    }
+  }
+}
+</script>

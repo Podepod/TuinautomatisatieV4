@@ -1,20 +1,27 @@
 <template>
   <div>
-    <NavbarLG />
+    <NavbarLG class="mb-1" />
     <b-container>
-      <br />
       <PoortAlert />
-      <LaatsteSensorWaarde />
 
       <h1>Lampen</h1>
-      <ManueleLampen />
+      <ManueleLampen v-if="stand == 'manueel'" class="mb-1" />
+      <AutomatischeLampen v-else class="mb-1" />
 
+      <LampenButtonBar :manueel="stand == 'manueel'" />
+
+      <LaatsteSensorWaarde />
     </b-container>
   </div>
 </template>
 
 <script>
 export default {
-    name: "LampenPage"
+    name: "LampenPage",
+    data() {
+      return {
+        stand: "automatisch"
+      }
+    }
 }
 </script>

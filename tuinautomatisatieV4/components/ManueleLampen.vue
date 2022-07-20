@@ -1,12 +1,6 @@
 <template>
   <b-list-group>
-    <ManueleLamp nummer="1" />
-    <ManueleLamp nummer="2" />
-    <ManueleLamp nummer="3" />
-    <ManueleLamp nummer="4" />
-    <ManueleLamp nummer="5" />
-    <ManueleLamp nummer="6" />
-    <ManueleLamp nummer="7" />
+    <Lamp v-for="i in 7" :nummer="i" stand="manueel" />    
     <PwmRange />
   </b-list-group>
 </template>
