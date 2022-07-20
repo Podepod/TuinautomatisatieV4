@@ -2,9 +2,10 @@
   <div>
     <NavbarLG />
     <b-container>
-      <br />
       <PoortAlert />
-      <LaatsteSensorWaarde />
+      <LaatsteSensorWaarde :opSensorPagina="true" />
+
+      <h1>Sensoren</h1>
     </b-container>
   </div>
 </template>

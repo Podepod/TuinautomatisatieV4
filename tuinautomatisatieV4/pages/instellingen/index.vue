@@ -2,8 +2,11 @@
   <div>
     <NavbarLG />
     <b-container>
-      <br />
       <PoortAlert />
+
+      <h1>Instellingen</h1>
+      
+
       <LaatsteSensorWaarde />
     </b-container>
   </div>

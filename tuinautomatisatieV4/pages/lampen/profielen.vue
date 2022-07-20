@@ -2,8 +2,10 @@
   <div>
     <NavbarLG />
     <b-container>
-      <br />
       <PoortAlert />
+      
+      <h1>Profielen</h1>
+
       <LaatsteSensorWaarde />
     </b-container>
   </div>
