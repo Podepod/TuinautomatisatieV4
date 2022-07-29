@@ -1,5 +1,5 @@
 <template>
-  <b-card no-body>
+  <b-card no-body class="mb-1" >
     <b-tabs card fill>
       <b-tab v-for="i in 7" :title="dagen[i-1]" :active="(i == 1) ? true : undefined">
         <b-card-text no-body>
@@ -14,9 +14,12 @@
 
 <script>
 export default {
+  props: [
+    'profiel'
+  ],
   data() {
     return {
-      dagen: ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"]
+      dagen: ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"],
     }
   }
 }

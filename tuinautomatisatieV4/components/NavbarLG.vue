@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mb-1">
         <b-navbar toggleable="sm" type="dark" variant="dark">
             <b-navbar-toggle target="navbar-toggle-collapse">
             </b-navbar-toggle>

@@ -1,12 +1,15 @@
 <template>
   <div>
-    <NavbarLG class="mb-1" />
+    <NavbarLG />
     <b-container>
       <PoortAlert />
 
       <h1>Lampen</h1>
-      <ManueleLampen v-if="stand == 'manueel'" class="mb-1" />
-      <AutomatischeLampen v-else class="mb-1" />
+      
+      <LampProfielSelect v-if="stand !=  'manueel'" />
+      
+      <ManueleLampen v-if="stand == 'manueel'" />
+      <AutomatischeLampen v-else />
 
       <LampenButtonBar :manueel="stand == 'manueel'" />
 
@@ -17,11 +20,11 @@
 
 <script>
 export default {
-    name: "LampenPage",
-    data() {
-      return {
-        stand: "automatisch"
-      }
+  name: "LampenPage",
+  data() {
+    return {
+      stand: "automatisch"
     }
+  }
 }
 </script>
