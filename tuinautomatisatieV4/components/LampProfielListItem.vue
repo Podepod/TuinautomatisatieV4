@@ -8,7 +8,7 @@
       </b-col>
       <b-col>
         <b-button-group>
-          <b-button :variant="(isActief) ? outline-success : success">Actief Maken</b-button>
+          <b-button :variant="(isActief) ? 'outline-success' : 'success'" :disabled="(isActief) ? true : false">Actief Maken</b-button>
           <b-button variant="warning">Aanpassen</b-button>
           <b-button :variant="(isDefault | isActief) ? 'outline-danger' : 'danger'" :disabled="(isDefault | isActief) ? true : false">Verwijderen</b-button>
         </b-button-group>

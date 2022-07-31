@@ -1,5 +1,5 @@
 <template>
-  <b-form-select class="mb-1" v-if="stand != 'manueel'" v-model="huidigGekozenProfiel" :options="profielen "></b-form-select>
+  <b-form-select class="mb-1" v-model="huidigGekozenProfiel" :options="profielen "></b-form-select>
 </template>
 
 <script>
