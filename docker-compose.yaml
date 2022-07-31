@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  web:
+    image: tuinautomatisatie_v4
+    restart: unless-stopped
+    volumes:
+     - ./tuinautomatisatieV4:/usr/src/nuxt-app
+    ports:
+     - "8082:3000"
+    environment:
+     - NUXT_HOST=tuin.kamerlode.home
+     - NUXT_PORT=3000
