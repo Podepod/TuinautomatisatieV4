@@ -1,13 +1,17 @@
 version: "3"
 
 services:
-  web:
-    image: tuinautomatisatie_v4
-    restart: unless-stopped
-    volumes:
-     - ./tuinautomatisatieV4:/usr/src/nuxt-app
-    ports:
-     - "8082:3000"
+  nuxtjs:
+    image: "node:16"
+    user: "node"
+    working_dir: /home/node/app
     environment:
-     - NUXT_HOST=tuin.kamerlode.home
-     - NUXT_PORT=3000
+      - NODE_ENV=production
+    volumes:
+      - ./tuinautomatisatieV4:/home/node/app
+    expose:
+      - "3000"
+    command: "npm run dev"
+
+    ports: "8082:3000"
+    restart: unless-stopped
