@@ -10,6 +10,7 @@ WORKDIR /usr/src/nuxt-app
 #RUN apk add git
 
 # copy the app, note .dockerignore
+COPY ./tuinautomatisatieV4 /usr/src/nuxt-app/
 RUN npm install
 RUN npm run build
 
